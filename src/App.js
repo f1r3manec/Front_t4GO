@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import ListaUsuarios from "./components/pages/ListaUsuarios";
+import Usuarios from "./components/pages/Usuarios";
+import UserState from "./context/User/UserState";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserState>
+      <div className="container p-1">
+        <div className="row">
+          <div className="col-8 col-md-8">
+            <Usuarios />
+          </div>
+          <div className="col-4  col-md-4">
+            <ListaUsuarios />
+          </div>
+        </div>
+      </div>
+    </UserState>
   );
 }
 
